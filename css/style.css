@@ -1,9 +1,31 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
 main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   position: relative;
+  overflow: hidden;
+}
+
+#content {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+#content.show {
+  opacity: 1;
 }
 
 #title {
@@ -16,7 +38,18 @@ main {
   color: cyan;
 }
 
+#sub-title {
+  position: absolute;
+  font-size: 60px;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: cyan;
+}
+
 #cat,
+#cat-sad,
 #confeti {
   pointer-events: none;
   user-select: none;
@@ -34,4 +67,77 @@ main {
 #confeti {
   width: 200vh;
   z-index: 1;
+}
+
+#start-btn {
+  padding: 15px 30px;
+  font-size: 1.8em;
+  background: linear-gradient(45deg, #00bcd4, #2196f3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  outline: none;
+  overflow: hidden;
+  z-index: 10;
+  opacity: 1;
+  will-change: opacity;
+  transition:
+    opacity 0.5s ease-in,
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#start-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+  transition: left 0.7s ease;
+}
+
+#start-btn:hover {
+  background: linear-gradient(45deg, #2196f3, #00bcd4);
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+#start-btn:hover::before {
+  left: 150%;
+}
+
+/* Click Animation: A quick pulse effect */
+#start-btn:active {
+  animation: clickPulse 0.3s ease-out;
+}
+
+@keyframes clickPulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
 }
