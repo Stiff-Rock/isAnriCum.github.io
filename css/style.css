@@ -69,7 +69,34 @@ main {
   z-index: 1;
 }
 
+#delete-btn {
+  display: none;
+  padding: 10px 20px;
+  font-size: 0.8em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  outline: none;
+  overflow: hidden;
+  z-index: 10;
+  opacity: 1;
+  will-change: opacity;
+  transition:
+    opacity 0.5s ease-in,
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
 #start-btn {
+  display: none;
   padding: 15px 30px;
   font-size: 1.8em;
   background: linear-gradient(45deg, #00bcd4, #2196f3);
@@ -140,4 +167,37 @@ main {
   100% {
     transform: translateX(-50%) scale(1);
   }
+}
+
+#input {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 280px;
+  text-align: center;
+}
+
+#nombreInput,
+#cumpleInput,
+#saveButton {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #cce4ff;
+  border-radius: 4px;
+}
+
+#saveButton {
+  background: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#saveButton:hover {
+  background: #0056b3;
 }

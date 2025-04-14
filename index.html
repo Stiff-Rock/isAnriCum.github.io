@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="image/favicon.png">
-  <title>¿isAnrianCum?</title>
+  <title>¿isUrCum?</title>
   <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -19,31 +19,44 @@
   <audio id="aw">
     <source src="media/aw.mp3" type="audio/mpeg">
   </audio>
-
   <main>
     <button id="start-btn" onclick="start()">Comprobar</button>
+    <button id="delete-btn" onclick="deleteData()">Borrar Datos</button>
 
     <div id="content">
-      <h1 id="title">¡¡FELIZ CUM ANRIAN!!</h1>
+      <h1 id="title"></h1>
+
       <div id="cat-sad">
         <img src="image/cat-sad.png">
       </div>
+
       <div id="cat">
         <div class="tenor-gif-embed" data-postid="27164337" data-share-method="host" data-aspect-ratio="1.49533"
           data-width="100%"><a href="https://tenor.com/view/cat-spinning-low-poly-meme-gif-27164337">Cat Spinning
             Sticker</a>from <a href="https://tenor.com/search/cat-stickers">Cat Stickers</a></div>
         <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
       </div>
+
       <div id="confeti">
         <div class="tenor-gif-embed" data-postid="27343800" data-share-method="host" data-aspect-ratio="1.78771"
           data-width="100%"><a href="https://tenor.com/view/confetti-gif-27343800">Confetti Sticker</a>from <a
             href="https://tenor.com/search/confetti-stickers">Confetti Stickers</a></div>
         <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
       </div>
+
       <h1 id="sub-title"></h1>
     </div>
-  </main>
 
+
+    <div id="input">
+      <h2>Nombre y Cumpleaños</h2>
+
+      <input type="text" id="nombreInput" placeholder="Tu nombre">
+      <input type="date" id="cumpleInput">
+      <button id="saveButton" onclick="saveData()">Guardar</button>
+    </div>
+
+  </main>
 
   <script defer src="scripts/index.js"></script>
 </body>
